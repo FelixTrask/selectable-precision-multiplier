@@ -3,9 +3,9 @@
 ### Architecture Overview:
 
 This block is a variable-precision unsigned multiplier. It operates in three precision modes determined by external control pins:
-1. **2-bit mode**(`mode = 00`): Direct load -> 4-bit product
-2. **4-bit mode**(`mode = 01`): Direct load -> 8-bit product
-3. **8-bit mode**(`mode = 10`): Two-cycle sequential load -> 16-bit product (two-cycle sequential load)
+1. **2-bit mode** (`mode = 00`): Direct load -> 4-bit product
+2. **4-bit mode** (`mode = 01`): Direct load -> 8-bit product
+3. **8-bit mode** (`mode = 10`): Two-cycle sequential load -> 16-bit product (two-cycle sequential load)
 
 ### Pin Mapping:
 
