@@ -50,8 +50,12 @@ All 8 bidirectional pins are set as inputs (`uio_oe = 8'b0000_0000x`)
 
 ## How to test
 
-Explain how to use your project
+Run the automated Cocotb testbench using `make`:
+
+```bash
+cd test
+make
 
 ## External hardware
 
-List external hardware used in your project (e.g. PMOD, LED display, etc), if any
+N/A
