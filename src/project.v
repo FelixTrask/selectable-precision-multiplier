@@ -70,6 +70,6 @@ module tt_um_multi_precision_mult (
   end
 
   // List all unused inputs to prevent warnings
-  wire _unused = &{ena, 1'b0};
+  wire _unused = &{ena, uio_in[7:3], 1'b0};
 
 endmodule
