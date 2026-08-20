@@ -25,6 +25,10 @@ module tb ();
 
   // Replace tt_um_example with your module name:
   tt_um_multi_precision_mult user_project (
+`ifdef USE_POWER_PINS
+      .VPWR(1'b1),
+      .VGND(1'b0),
+`endif
       .ui_in  (ui_in),    // Dedicated inputs
       .uo_out (uo_out),   // Dedicated outputs
       .uio_in (uio_in),   // IOs: Input path

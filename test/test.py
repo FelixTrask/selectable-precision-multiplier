@@ -39,7 +39,7 @@ async def test_project(dut):
 
             expected = a * b
             assert dut.uo_out.value == expected, \
-                f"Mode 0 Fail: {a} * {b} = {expected}, got {dut.uo_out.value.integer}"
+                f"Mode 0 Fail: {a} * {b} = {expected}, got {dut.uo_out.value.binstr}"
 
 
     dut._log.info("Testing Mode 1 (4-bit)...")
@@ -54,7 +54,7 @@ async def test_project(dut):
 
             expected = a * b
             assert dut.uo_out.value == expected, \
-                f"Mode 0 Fail: {a} * {b} = {expected}, got {dut.uo_out.value.integer}"
+                f"Mode 1 Fail: {a} * {b} = {expected}, got {dut.uo_out.value.binstr}"
 
 
     dut._log.info("Testing Mode 2 (8-bit)...")
@@ -76,7 +76,7 @@ async def test_project(dut):
         await FallingEdge(dut.clk)
         assert dut.uo_out.value == expected_high, \
             f"Mode 2 High Byte Fail: {a} * {b} = {expected} ({hex(expected)}), " \
-            f"expected high {hex(expected_high)}, got {hex(dut.uo_out.value.integer)}"
+            f"expected high {hex(expected_high)}, got {dut.uo_out.value.binstr}"
 
         await FallingEdge(dut.clk)
         dut.uio_in.value = 0b010
@@ -84,6 +84,6 @@ async def test_project(dut):
         await FallingEdge(dut.clk)
         assert dut.uo_out.value == expected_low, \
             f"Mode 2 Low Byte Fail: {a} * {b} = {expected} ({hex(expected)}), " \
-            f"expected low {hex(expected_low)}, got {hex(dut.uo_out.value.integer)}"
+            f"expected low {hex(expected_low)}, got {dut.uo_out.value.binstr}"
 
     dut._log.info("All tests passed successfully!")
